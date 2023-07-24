@@ -1,5 +1,7 @@
 @import url('common.css');
 @import url('include.css');
+@import url('https://cdn.linearicons.com/free/1.0.0/icon-font.min.css');
+/* @import url('main-tablet.css'); */
 
 body {
   font-family: 'Montserrat', sans-serif;
@@ -10,6 +12,31 @@ body {
   background: url('lesserafim.jpeg')
      no-repeat center / cover;
   height: calc(100vh - 97px);
+  margin-top: 97px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#product-overview h2 {
+  font-size: 58px;
+  font-weight: 700;
+  color: #d7ff39;
+  text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.95);
+
+  animation: drop 2s linear;
+}
+@keyframes drop {
+  0% {
+    color: #fff;
+    opacity: 0;
+    transform: translateY(-500px);
+  }
+  100% {
+    color: #d7ff39;
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 
@@ -119,3 +146,63 @@ section .section-title {
   font-size: 20px;
 }
 
+
+/* 1024해상도 태블릿 */
+@media screen and (max-width: 1024px) {
+  
+  #product-overview {
+    height: calc(50vh - 97px);
+  }
+
+  #plans .plan-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  #plans .plan-wrapper .plan--highlighted {
+    order: -1;
+  }
+  #plans .plan-wrapper .plan {
+    width: 60%;
+  }
+  #plans .plan-wrapper .plan .plan__features {
+    display: none;
+  }
+}
+
+
+/* 모바일 414해상도 */
+@media screen and (max-width: 414px) {
+  
+  .main-header .main-nav {
+    display: none;
+  }
+  .main-header h1 {
+    margin: 0;
+  }
+  .main-header .main-header__brand {
+    font-size: 20px;
+  }
+  .main-header .mobile-menu-btn {
+    display: block;
+    font-size: 28px;
+    font-weight: 700;
+  }
+
+  #product-overview {
+    height: calc(70vh - 70px);
+    margin-top: 70px;
+  }
+  #product-overview h2 {
+    font-size: 26px;
+    animation: none;
+  }
+  #plans .plan-wrapper .plan {
+    width: 80%;
+  }
+  #plans .plan-wrapper .plan h3,
+  #plans .plan-wrapper .plan h4,
+  #plans .plan-wrapper .plan h5 {
+    font-size: 16px;
+  }
+}
